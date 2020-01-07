@@ -63,7 +63,23 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] getEvenDigits(int[] values) {
-        return values;
+
+        int lengthValues = values.length;
+        int evenNums = 0;;
+        for (int i = 0; i < lengthValues; i++) {
+            if(values[i]%2 == 0){
+                evenNums++;
+            }
+        }
+        int [] evenMas = new int[evenNums];
+        int index = 0;
+        for (int i = 0; i < lengthValues; i++) {
+            if(values[i]%2 == 0){
+                evenMas[index] = values[i];
+                index++;
+            }
+        }
+        return evenMas;
     }
 
     /**
